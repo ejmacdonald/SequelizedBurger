@@ -12,5 +12,13 @@ module.exports = function(sequelize, DataTypes) {
     	allowNull: false
     }
   });
+
+  burger.associate = function(models) {
+    burger.belongsTo(models.topping, {
+    foreignKey: {
+      allowNull: true
+      }
+    });
+  };
   return burger;
 }

@@ -22,9 +22,12 @@ $(function() {
 
   $("#new-burger").on("click", function(event) {
     console.log ("found a new burger click!");
+    var isTopped = $("#top").prop("checked");
+    console.log ("isTopped: " + isTopped);
     var newBurger = {
       burger_name: $("#name").val().trim(),
-      devoured: "0"
+      devoured: "0",
+      topping: isTopped
     };
 
     $.ajax("/api/burgers/", {

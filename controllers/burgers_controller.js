@@ -18,6 +18,8 @@ router.get("/", function(req, res) {
 });
 
 router.post("/api/burgers/", function(req, res) {
+  
+  console.log(req.body);
   console.log("in the post");
   burger.burger.create(req.body).then(function(results) {
     console.log("completed post");
